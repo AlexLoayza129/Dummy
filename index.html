@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dummy | Home</title>
+</head>
+<body>
+    <!-- Container -->
+    <div class="flex flex-col">
+        <!-- Header -->
+        <header class="flex justify-between items-center p-8 custom-b">
+            <div class="font-black text-3xl">
+                <h1>dummy.</h1>
+            </div>
+            <nav class="flex text-gray-700 text-base space-x-12">
+                <a href="#Test">Home</a>
+                <a href="#Test">Shop</a>
+                <a href="#Test">Contact</a>
+                <a href="#Test">Help</a>
+            </nav>
+            <div class="flex space-x-10">
+                <button class="flex items-center space-x-2">
+                    <span>Account</span><img src="./assets/images/dropdown.svg">
+                </button>
+                <button class="flex items-center space-x-2">
+                    <img src="./assets/images/shopbag.svg">
+                    <span>3 items</span>
+                </button>
+            </div>
+        </header>
+        <!-- Main content -->
+        <div class="flex justify-between m-6 space-x-4">
+            <!-- Payment steps -->
+            <div class="flex flex-col bg-gray-100 rounded-lg py-6 select-none" style="min-width: 780px;">
+                <div class="mx-8 custom-b" style="min-height: 500px;">
+                    <div class="flex items-center  place-content-center text-xl space-x-4">
+                        <p class="text-sky-600">Account</p><img src="./assets/images/check.svg">
+                        <p>Shipping</p><img src="./assets/images/check.svg">
+                        <p>Payment</p>
+                    </div>
+                    <!-- Form -->
+                    <div class="mx-24 text-base text-gray-600 p-6 space-y-2">
+                        <p class="text-left text-xl py-2">Account details</p>
+                        <p>Email address</p>
+                        <div class="flex items-center border bg-slate-200 rounded-md relative" style="min-height: 60px;">
+                            <input type="email" class="w-full h-full border-none bg-slate-200 py-4 px-2" placeholder="Email@myemail.com">
+                            <img src="./assets/images/checkinput.svg" class="absolute right-2">
+                        </div>
+                        <p>Password</p>
+                        <div class="flex items-center border bg-slate-200 rounded-md relative" style="min-height: 60px;">
+                                <input type="password" class="w-full h-full border-none bg-slate-200 py-4 px-2" placeholder="*********">
+                                <img src="./assets/images/checkinput.svg" class="absolute right-2">
+                        </div>
+                        <div class="flex place-content-end items-center space-x-6 py-4">
+                            <button class="p-4 rounded-xl hover:bg-gray-200">Register for account</button>
+                            <button class="text-white text-base bg-sky-600 hover:bg-sky-700 py-4 px-12 rounded-xl">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mx-8">
+                    <div class="flex place-content-end items-center space-x-6 p-6 mx-24">
+                            <button class="p-4 rounded-xl hover:bg-gray-200">Cancel order</button>
+                            <button class="text-white text-base bg-sky-600 hover:bg-sky-700 py-4 px-10 rounded-xl">Shipping details</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Product content -->
+            <div class="flex flex-col bg-gray-100 rounded-lg py-8 select-none w-full text-xl">
+                <div class="mx-10">
+                    <!-- Pedido -->
+                    <p>Order Summary</p>
+                    <div class="py-4">
+                        <img src="./assets/images/product.png">
+                    </div>
+                    <!-- Description and input-->
+                    <div class="flex justify-between">
+                        <div>
+                            <p>Sony wireless headphones</p>
+                            <p class="font-bold">£320.45</p>
+                        </div>
+                        <div class="flex items-center relative">
+                            <button class="p-2 px-4 rounded-lg bg-gray-200 z-2 cursor-pointer" onclick="decreaseProduct()">-</button>
+                            <input id="product" type="number" value="1" min="0" max="99" readonly="true" class="bg-gray-100 z-1 select-none pointer-events-none" style="max-width: 35px;transform: translateX(11px);z-index: 1;">
+                            <button class="p-2 px-4 rounded-lg bg-gray-200 z-10 overflow-hidden cursor-pointer" id="increase" onclick="increaseProduct()">+</button>
+                        </div>
+                    </div>
+                    <!-- Gift card or discount code-->
+                    <div class="py-4 text-base text-slate-500 space-y-4">
+                        <p>Gift Card / Discount code</p>
+                        <div class="flex justify-between">
+                            <input type="text" class="bg-slate-200 py-4 px-6 rounded-md">
+                            <button class="py-4 px-8 border border-sky-600 rounded-md text-sky-600 hover:bg-sky-600 hover:text-white">Apply</button>
+                        </div>
+                    </div>
+                    <!-- Order -->
+                    <div class="py-6 space-y-6 text-base">
+                        <!-- Subtotal -->
+                        <div class="flex justify-between">
+                            <p>Subtotal</p>
+                            <p class="text-lg">£316.55</p>
+                        </div>
+                        <!-- Subtotal -->
+                        <div class="flex justify-between">
+                            <p>Tax</p>
+                            <p class="text-lg">£3.45</p>
+                        </div>
+                        <!-- Subtotal -->
+                        <div class="flex justify-between">
+                            <p>Shipping</p>
+                            <p class="text-lg text-green-500">Free</p>
+                        </div>
+                        <!-- Subtotal -->
+                        <div class="flex justify-between">
+                            <p class="font-bold">Total</p>
+                            <p class="text-lg">£320.45</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var input = document.getElementById('product')
+
+        function increaseProduct(){
+            input.value++
+        }
+
+        function decreaseProduct(){
+            input.value--
+
+            if(input.value == "-1"){
+                input.value++
+            }
+        }
+    </script>
+</body>
+</html>
